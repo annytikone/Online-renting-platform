@@ -1,0 +1,262 @@
+Created This project using mysql db !
+
+1.New User Registration
+
+
+URL: http://localhost:3000/user/v1/register
+Method: POST
+***
+Case 1: if login type is 1 ie. System login then required fields are below:
+Request:
+		{
+			"username": "aniket09",//optional but unique
+			"password": "aniket",
+			"firstname": "aniket",
+			"lastname": "tikone",
+			"mobilenumber": 7040148845,//optional but unique
+			"emailid": " aniket.tikone@gmail.com.com",
+			"gender": "M",
+			"birthdate": "1998-01-02",
+			"logintype":1,//optional,
+			"emergencymobilenumber":7878882,//optional
+			"emergencyemailid":"venky44@gmail.com"//optional
+		}
+Response:
+		{
+    "status": 0,
+    "message": "SignUp & login successful ",
+    "data": [
+        {
+            "accessToken": 				"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3Rjb20iLCJpYXQiOjE1OTU1NjYxMTcsImV4cCI6MTU5NTU3NjExN30.WB1bjsMY-FfO7A8wTUrKn7bMiO7Qap_tPI31WYKPH68",
+            "refreshToken": 				"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3Rjb20iLCJpYXQiOjE1OTU1NjYxMTcsImV4cCI6MTU5NTU3NjExN30.KDOuhlOuktk7GpfDVVtVsr3Lo2nwhql0CmvtKOCNYV8"
+        }
+    ]
+}
+
+***
+Case 2: if login type is 2 ie. login using Facebook then required fields are below:
+
+Request:
+		{
+
+			"firstname": "aniket",
+			"lastname": "tikone",
+			"emailid": " aniket.tikone@gmail.com.com",
+			"gender": "M",
+			"birthdate": "1998-01-02",
+			"logintype":2,
+			"userid":3111889802221848,
+			"accesstoken":"EAAIZB4Js1nLYeBAMP90LEaIKHhLMKXjmWnpmiWsVg7LkpJEQENVey0qiB96Qyq28SBKXj1DXhEu7kk5GcTFAODwkB5XZBfvEMiq8ZBmfxoXaOZBZCYCQXqOBdpZCA83arYzt5VsEexwAL1pQorpQUBZB3XZCoZAFOl8aUyYDipKCrywov96cPwjv5xXOINw171RogOoUUrRY66L8TcLNOl4xM8GP62I4oh0YMZD"
+		}
+
+Response:
+	
+	{
+    	"status": 0,
+   	 "message": "login successful using Facebook !",
+  	  "data": [
+  	      {
+       			"accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IiBWZW5rYXRlc2guTmFpZHVAYm50LXNvZnQuY29tIiwiaWF0IjoxNTk1NTE0ODE1LCJleHAiOjE1OTU1MjQ4MTV9.ppg5R1FMh- oTgAGtYmXkPvrWWMTpTPxpYh9hkoWYayk",
+      	      "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IiBWZW5rYXRlc2guTmFpZHVAYm50LXNvZnQuY29tIiwiaWF0IjoxNTk1NTE0ODE1LCJleHAiOjE1OTU1MjQ4MTV9.TrOKW5qIZVB2r8CkLW6BR8QYo2jF93ft1oRonlTbl1g"
+        }
+    ]
+}
+
+***
+Case 3: if login type is 3 ie. login using Facebook then required fields are below:
+
+Request:
+		{
+
+			"firstname": "aniket",
+			"lastname": "tikone",
+			"emailid": " aniket.tikone@gmail.com.com",
+			"gender": "M",
+			"birthdate": "1998-01-02",
+			"logintype":3,
+			"userid":3111889802221848,
+			"accesstoken":"EAAIZB4Js1nLYeBAMP90LEaIKHhLMKXjmWnpmiWsVg7LkpJEQENVey0qiB96Qyq28SBKXj1DXhEu7kk5GcTFAODwkB5XZBfvEMiq8ZBmfxoXaOZBZCYCQXqOBdpZCA83arYzt5VsEexwAL1pQorpQUBZB3XZCoZAFOl8aUyYDipKCrywov96cPwjv5xXOINw171RogOoUUrRY66L8TcLNOl4xM8GP62I4oh0YMZD"
+		}
+
+Response:
+	
+	{
+    "status": 0,
+    "message": "login successful using Google !",
+    "data": [
+        {
+       		"accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IiBWZW5rYXRlc2guTmFpZHVAYm50LXNvZnQuY29tIiwiaWF0IjoxNTk1NTE0ODE1LCJleHAiOjE1OTU1MjQ4MTV9.ppg5R1FMh- oTgAGtYmXkPvrWWMTpTPxpYh9hkoWYayk",
+            "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IiBWZW5rYXRlc2guTmFpZHVAYm50LXNvZnQuY29tIiwiaWF0IjoxNTk1NTE0ODE1LCJleHAiOjE1OTU1MjQ4MTV9.TrOKW5qIZVB2r8CkLW6BR8QYo2jF93ft1oRonlTbl1g"
+        }
+    ]
+}
+
+
+
+
+
+================================================================================================================================
+2.User Login
+
+URL:http://localhost:3000/user/v1/login
+Method:POST
+Request:
+		{
+			"username": "aniket09",
+			"password": "aniket"
+		}
+Response:
+	{
+	    "status": 0,
+	    "message": "login successful",
+	    "data": [
+	        {
+	            "accessToken": 					"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InZlbmt5IiwiaWF0IjoxNTg5NTI1MjQ4LCJleHAiOjE1ODk1MjYyNDh9.KcaN-		IVR_BvEyyis86OoS4r0Blv7nIzbY9PQrik",
+            "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InZlbmt5IiwiaWF0IjoxNTg5NTI1MjQ4LCJleHAiOjE1ODk1MjYyNDh9.f1Thftc5JhukeKVPpRfImcxtyfcyKAN_QYIF-qGhT8A"
+        }
+    		]
+	}
+====================================================================================================================
+3.View User Profile
+
+URL:http://localhost:3000/user/v1/viewProfile
+Method:POST
+Bearer Token:accessToken
+Request:
+	Bearer Token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InZlbmt5IiwiaWF0IjoxNTg5NTI1MjQ4LCJleHAiOjE1ODk1MjYyNDh9.KcaN-yVpbIVR_BvEyyis86OoS4r0Blv7nIzbY9PQrik
+
+Response:
+		{
+    "status": 0,
+    "message": "View Profile successful	",
+    "data": [
+        [
+             {
+                "userName": "aniket09",
+                "firstName": "aniket",
+                "lastName": "tikone",
+                "mobileNumber": 7040148845,
+                "gender": "M",
+                "birthDate": "1998-01-01T18:30:00.000Z",
+		"emergencyMobileNumber": 78788820,
+                "emergencyEmailId": "anikettikone99@gmail.com"
+            }
+        ]
+    ]
+}
+====================================================================================================================
+4.Generate new accessToken using refreshToken
+
+URL:http://localhost:3000/user/v1/token
+Method:POST
+Request:
+		{
+			"refreshtoken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImFubnkiLCJpYXQiOjE1ODk0NTYwMjIsImV4cCI6MTU4OTQ1NzAyMn0.zoeqfzWXB3FBHi2mx9r38fQZHlVoIKwPeUEHQiWAu5s"
+		}
+Response:
+		{
+		    "status": 0,
+		    "message": "Tokens Generated successfully.",
+    		"data": [
+	        {
+        		    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InZlbmt5IiwiaWF0IjoxNTg5NTI1NjU3LCJleHAiOjE1ODk1MjY4NTd9.-7_C00vvaP5zVpA0aGhXAg6ngBhGMiO26baajWj6qLY"
+        	}
+    			]
+}	
+==========================================================================================================================
+5.Update user dynamically:
+
+URL:localhost:3000/user/v1/updateProfile
+Method:POST
+Request:
+	{
+		"username":"VN",
+		"password":"VNK1245"
+		"firstname": "aniket",
+		"lastname": "N",
+		"mobilenumber": 9115458,
+		"emailid": "VN@1gmail.com.com",
+		"gender": "M",
+		"birthdate": "1998-01-02",
+		"emergencymobilenumber":78788820,
+		"emergencyemailid":"updatedvenky44@gmail.com",
+}
+
+Response:
+		{
+   			 "status": 0,
+   			 "message": "User Updated Successfully:",
+   		 "data": [
+      			  
+   			 ]
+		}
+==========================================================================================================================
+6.Update Password
+URL:http://localhost:3000/user/v1/newPassword
+Method:POST
+Request:
+	{
+	"oldpassword":"asd",
+	"newpassword":"Aniket12"
+	}
+Response:
+		{
+   		 "status": 0,
+    		"message": "Password Updated Successfully",
+ 		"data": [
+    		    null
+   			 ]
+		}
+==========================================================================================================================
+7.delete profile
+URL:http://localhost:3000/user/v1//deleteProfile
+Method:POST
+Request:
+	header:Bearer Token:accessToken			
+	
+Response:
+		{
+ 	   	  "status": 0,
+  		  "message": "account deleted successfully",
+  		  "data": [
+   		     null
+    				]
+		}
+
+
+==========================================================================================================================
+8.forgot password
+URL:http://localhost:3000/user/v1/forgotPassword
+Method:POST
+Request:
+	{
+		"emailid":"aniket@gmail.com"	
+	}
+Response:
+		{
+  		  "status": 0,
+  		  "message": "Email Sent successfully",
+  		  "data": [
+   			     null
+   			 ]
+		}
+
+==========================================================================================================================
+9.Emergency Contact
+URL:http://localhost:3000/user/v1/emergencyCall
+Method:POST
+Request:
+	header:Bearer Token:accessToken	
+	{
+	"message":"Tyre punchured",
+	"location":"location.io"	
+	}
+Response:
+		{
+  		  "status": 0,
+  		  "message": "Email Sent successfully",
+  		  "data": [
+   			     null
+   			 ]
+		}	
+
