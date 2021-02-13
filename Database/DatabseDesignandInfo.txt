@@ -1,0 +1,30 @@
++-------------------------+
+| Tables_in_online_renting|
++-------------------------+
+| userAuthentication      |
++-------------------------+
+1 row in set (0.00 sec)
+
+mysql> desc userAuthentication;
++-----------------------+---------------+------+-----+---------+----------------+
+| Field                 | Type          | Null | Key | Default | Extra          |
++-----------------------+---------------+------+-----+---------+----------------+
+| id                    | int           | NO   | PRI | NULL    | auto_increment |
+| userName              | varchar(20)   | YES  | UNI | NULL    |                |
+| password              | varchar(100)  | YES  |     | NULL    |                |
+| accountStatus         | tinyint(1)    | YES  |     | NULL    |                |
+| numberOfAttempts      | int           | YES  |     | NULL    |                |
+| firstName             | varchar(20)   | NO   |     | NULL    |                |
+| lastName              | varchar(20)   | NO   |     | NULL    |                |
+| mobileNumber          | decimal(10,0) | YES  |     | NULL    |                |
+| emailId               | varchar(30)   | NO   | UNI | NULL    |                |
+| lastLoggedIn          | timestamp     | YES  |     | NULL    |                |
+| gender                | varchar(20)   | NO   |     | NULL    |                |
+| birthDate             | date          | NO   |     | NULL    |                |
+| loginType             | int           | YES  |     | NULL    |                |
+| userId                | decimal(65,0) | YES  | UNI | NULL    |                |
+| imageUrl              | varchar(100)  | YES  |     | NULL    |                |
+| accessToken           | varchar(300)  | YES  | UNI | NULL    |                |
+| emergencyMobileNumber | decimal(10,0) | YES  |     | NULL    |                |
+| emergencyEmailId      | varchar(40)   | YES  |     | NULL    |                |
++-----------------------+---------------+------+-----+---------+----------------+
